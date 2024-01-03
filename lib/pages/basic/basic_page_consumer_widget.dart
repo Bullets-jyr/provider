@@ -3,16 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'basic_provider.dart';
 
-class BasicPage extends ConsumerStatefulWidget {
-  const BasicPage({super.key});
+class BasicPageConsumerWidget extends ConsumerWidget {
+  const BasicPageConsumerWidget({super.key});
 
   @override
-  ConsumerState<BasicPage> createState() => _BasicPageState();
-}
-
-class _BasicPageState extends ConsumerState<BasicPage> {
-@override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final hello = ref.watch(helloProvider);
     final world = ref.watch(worldProvider);
 
