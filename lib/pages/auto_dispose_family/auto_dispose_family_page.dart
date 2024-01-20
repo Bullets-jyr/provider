@@ -8,6 +8,7 @@ class AutoDisposeFamilyPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // 같은 파라미터에 대해서는 다시 provider가 만들어지지 않습니다.
     final helloJohn = ref.watch(autoDisposeFamilyHelloProvider(there: 'john'));
     // final helloJane = ref.watch(autoDisposeFamilyHelloProvider('jane'));
     final helloJane = ref.watch(autoDisposeFamilyHelloProvider(there: 'john'));

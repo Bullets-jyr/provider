@@ -24,6 +24,8 @@ final counterProvider = Provider.autoDispose.family<int, Counter>((ref, c) {
   return c.count;
 });
 
+//<String, String: argument로 전달하는 데이터 타입>
+// 파라미터로 positional argument로 하나만 추가할 수 있습니다.
 // final autoDisposeFamilyHelloProvider = Provider.autoDispose.family<String, String>((ref, name) {
 //   ref.onDispose(() {
 //     print('[autoDisposeFamilyHelloProvider($name)] disposed');
