@@ -5,7 +5,7 @@ import 'basic_provider.dart';
 
 // ConsumerStatefulWidget == StatefulWidget
 // 위젯에서 다뤄야 할 state나 변수가 있을 때, StatefulWidget을 사용하는 것 처럼
-// 핸들링해야 할 state나 변수가 있을 경우, ConsumerStatefulWidgetd을 사용합니다.
+// 핸들링해야 할 state나 변수가 있을 경우, ConsumerStatefulWidget을 사용합니다.
 class BasicPage extends ConsumerStatefulWidget {
   const BasicPage({super.key});
 

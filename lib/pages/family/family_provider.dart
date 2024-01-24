@@ -12,6 +12,7 @@ part 'family_provider.g.dart';
 
 @Riverpod(keepAlive: true)
 // String familyHello(FamilyHelloRef ref, {required String name}) {
+// String familyHello(FamilyHelloRef ref, String name) {
 String familyHello(FamilyHelloRef ref, String there) {
   ref.onDispose(() {
     print('[familyHelloProvider($there)] disposed');

@@ -2,7 +2,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 // dart run build_runner build --delete-conflicting-output
-// dart run build_runner build -d
+// dart run build_runner build -d (축약형)
 // dart run build_runner watch -d
 part 'basic_provider.g.dart';
 
@@ -20,6 +20,8 @@ part 'basic_provider.g.dart';
 //   return 'World';
 // });
 
+// code generation으로 Provider를 만들경우, 기본이 autodispose 입니다.
+// dispose되지 않는 Provider를 만들기 위해서는 @Riverpod(keepAlive: true)를 사용해야합니다.
 @Riverpod(keepAlive: true)
 String hello(HelloRef ref) {
   ref.onDispose(() {
