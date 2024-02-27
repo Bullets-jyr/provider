@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Counter extends Equatable {
   final int count;
+
   const Counter({
     required this.count,
   });

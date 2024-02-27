@@ -6,6 +6,7 @@ part 'auto_dispose_family_provider.g.dart';
 
 class Counter extends Equatable {
   final int count;
+
   const Counter({
     required this.count,
   });
@@ -32,6 +33,13 @@ final counterProvider = Provider.autoDispose.family<int, Counter>((ref, c) {
 //   });
 //   return 'Hello $name';
 // });
+
+final autoDisposeFamilyHelloProvider = Provider.autoDispose.family<String, String>((ref, name) {
+  ref.onDispose(() {
+    print('[autoDisposeFamilyHelloProvider($name)] disposed');
+  });
+  return 'Hello $name';
+});
 
 @riverpod
 String autoDisposeFamilyHello(AutoDisposeFamilyHelloRef ref, {required String there}) {
