@@ -5,7 +5,11 @@ linter:
     avoid_print: false
 
 analyzer:
+  # riverpod_lint는 custom_lint를 사용해서 implement되었습니다.
+  # 그렇기 때문에 plugins아래 custom_lint를 리스트 업 해야합니다.
   plugins:
     - custom_lint
+  # 또 riverpod_generator를 사용해서 generate된 코드에서 발생할 수도 있는
+  # lint warnning을 disabled 시키기 위해 exclude아래 모든 g.dart파일을 포함시켰습니다.
   exclude:
     - '**/*.g.dart'

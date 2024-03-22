@@ -8,6 +8,7 @@ class FamilyPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // familyProvider를 사용하기 위해서는 추가적인 parameter를 전달해야합니다.
     // final helloJohn = ref.watch(familyHelloProvider('john'));
     // final helloJane = ref.watch(familyHelloProvider('jane'));
 

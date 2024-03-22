@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// 그런데 familyProvider를 사용할 때 주의해야할 점이 있습니다.
 class Counter extends Equatable {
   final int count;
 

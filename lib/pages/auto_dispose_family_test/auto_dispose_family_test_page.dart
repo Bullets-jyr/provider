@@ -11,8 +11,7 @@ class AutoDisposeFamilyTestPage extends ConsumerStatefulWidget {
       _AutoDisposeFamilyTestPageState();
 }
 
-class _AutoDisposeFamilyTestPageState
-    extends ConsumerState<AutoDisposeFamilyTestPage> {
+class _AutoDisposeFamilyTestPageState extends ConsumerState<AutoDisposeFamilyTestPage> {
   String name = 'john';
 
   @override
