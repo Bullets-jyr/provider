@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+
 // import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -42,15 +43,18 @@ final counterProvider = Provider.autoDispose.family<int, Counter>((ref, c) {
 // 그런데 familyProvider에는 한계가 있습니다.
 // 파라미터로 positional argument하나만 추가할 수 있다는 점입니다.
 // 만약 여러 개의 파라미터를 전달하고 싶으면 어떻게 해야할까요?
-final autoDisposeFamilyHelloProvider = Provider.autoDispose.family<String, String>((ref, name) {
-  ref.onDispose(() {
-    print('[autoDisposeFamilyHelloProvider($name)] disposed');
-  });
-  return 'Hello $name';
-});
+// final autoDisposeFamilyHelloProvider = Provider.autoDispose.family<String, String>((ref, name) {
+//   ref.onDispose(() {
+//     print('[autoDisposeFamilyHelloProvider($name)] disposed');
+//   });
+//   return 'Hello $name';
+// });
 
 @riverpod
-String autoDisposeFamilyHello(AutoDisposeFamilyHelloRef ref, {required String there}) {
+String autoDisposeFamilyHello(
+  AutoDisposeFamilyHelloRef ref, {
+  required String there,
+}) {
   ref.onDispose(() {
     print('[autoDisposeFamilyHelloProvider($there)] disposed');
   });

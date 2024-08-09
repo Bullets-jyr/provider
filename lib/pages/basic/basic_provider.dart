@@ -21,13 +21,13 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 // 처음으로 code generation할 경우에는 보통 시간이 좀 소요됩니다.
 part 'basic_provider.g.dart';
 
-final helloProvider = Provider<String>((ref) {
-  ref.onDispose(() {
-    print('[helloProvider] disposed');
-  });
-  return 'Hello';
-});
-
+// final helloProvider = Provider<String>((ref) {
+//   ref.onDispose(() {
+//     print('[helloProvider] disposed');
+//   });
+//   return 'Hello';
+// });
+//
 // final worldProvider = Provider<String>((ref) {
 //   ref.onDispose(() {
 //     print('[worldProvider] disposed');

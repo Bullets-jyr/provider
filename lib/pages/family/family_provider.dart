@@ -7,7 +7,7 @@ part 'family_provider.g.dart';
 // 싶습니다. 가장 쉬운 방법은 완전히 새로운 Provider를 2개 만드는 방법이 되겠습니다.
 // 그런데 이렇게 하는 방법은 유사한 Provider만 많아지는 별로 바람직한 방법이
 // 아닌거 같습니다. Riverpod에서는 이러한 경우에 대비해 family modifer를
-// 제공합니다. family modifer를 이용하면 Provider를 만들 때, 추가적인 argument를
+// 제공합니다. family modifier를 이용하면 Provider를 만들 때, 추가적인 argument를
 // 전달할 수 있습니다.
 // fmaily modifer를 적용하기 위해서는 Provider뒤에 .family를 입력하고,
 // argument로 전달하는 data 타입을 추가로 명시해야합니다.
@@ -27,21 +27,21 @@ part 'family_provider.g.dart';
 // Provider의 기본동작방식에 영향을 미치는 autoDispose modifier와
 // family modifier에 대해 알아봤습니다. 그런데 당연하게도
 // autoDispose와 family modifier는 함께 사용할 수 있습니다.
-final familyHelloProvider = Provider.family<String, String>((ref, name) {
-  ref.onDispose(() {
-    print('[familyHelloProvider($name)] disposed');
-  });
-  return 'Hello $name';
-});
+// final familyHelloProvider = Provider.family<String, String>((ref, name) {
+//   ref.onDispose(() {
+//     print('[familyHelloProvider($name)] disposed');
+//   });
+//   return 'Hello $name';
+// });
 
 @Riverpod(keepAlive: true)
 // String familyHello(FamilyHelloRef ref, {required String name}) {
 // String familyHello(FamilyHelloRef ref, String name) {
-String familyHello(FamilyHelloRef ref, String name) {
+String familyHello(FamilyHelloRef ref, String there) {
   ref.onDispose(() {
-    print('[familyHelloProvider($name)] disposed');
+    print('[familyHelloProvider($there)] disposed');
   });
-  return 'Hello $name';
+  return 'Hello $there';
 }
 
 // 마찬가지로 riverpod annotation을 import하고

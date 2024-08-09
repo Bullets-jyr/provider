@@ -12,18 +12,24 @@ part 'auto_dispose_provider.g.dart';
 // 사용하기 위해서는 Provider에 .autoDispose를 붙이면 됩니다.
 // 모든 종료의 Provider에 똑같이 적용이 됩니다.
 
+// 앱을 만들 때, 특정 state가 값을 유지하고 있어야할 필요가 있다면
+// autoDispose를 적용하면 안됩니다.
+// 그렇지만 특정 페이지에서 표시해야될 콘텐츠가 자주 바뀌거나 하는 경우에는
+// 이전 값을 유지할 필요가 없겠죠? 이러한 경우에는 다시 콘텐츠를 가져오는게 좋습니다.
+// 이럴 때, autodispose modifier를 사용하면 좋습니다.
+
 // 만약 비슷한 Provider를 여러 개 만들어야할 필요가 있는 경우는 지금 방식로
 // 매번 완전히 새로운 Provider를 만들어야 한다면 상당히 귀찮을거 같습니다.
 // 예를 들어 Hello john, Hello jane과 같이 이름이 바뀔 때마다 매번 새로운
 // Provider를 만들어야 한다면 별로 바람직해보이지 않죠?
 // 이럴 경우를 대비해서 Riverpod에서는 family modifier를 제공합니다.
-final autoDisposeHelloProvider = Provider.autoDispose<String>((ref) {
-  print('[autoDisposeHelloProvider] created');
-  ref.onDispose(() {
-    print('[autoDisposeHelloProvider] disposed');
-  });
-  return 'Hello';
-});
+// final autoDisposeHelloProvider = Provider.autoDispose<String>((ref) {
+//   print('[autoDisposeHelloProvider] created');
+//   ref.onDispose(() {
+//     print('[autoDisposeHelloProvider] disposed');
+//   });
+//   return 'Hello';
+// });
 
 @riverpod
 String autoDisposeHello(AutoDisposeHelloRef ref) {

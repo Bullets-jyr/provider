@@ -6,7 +6,7 @@ part of 'family_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$familyHelloHash() => r'2ce13d97e2f177d6aa8ec5019fa3bf034d08de7e';
+String _$familyHelloHash() => r'4a57616ce3b841807fcf36e057884e11bce2a6d2';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -40,10 +40,10 @@ class FamilyHelloFamily extends Family<String> {
 
   /// See also [familyHello].
   FamilyHelloProvider call(
-    String name,
+    String there,
   ) {
     return FamilyHelloProvider(
-      name,
+      there,
     );
   }
 
@@ -52,7 +52,7 @@ class FamilyHelloFamily extends Family<String> {
     covariant FamilyHelloProvider provider,
   ) {
     return call(
-      provider.name,
+      provider.there,
     );
   }
 
@@ -75,11 +75,11 @@ class FamilyHelloFamily extends Family<String> {
 class FamilyHelloProvider extends Provider<String> {
   /// See also [familyHello].
   FamilyHelloProvider(
-    String name,
+    String there,
   ) : this._internal(
           (ref) => familyHello(
             ref as FamilyHelloRef,
-            name,
+            there,
           ),
           from: familyHelloProvider,
           name: r'familyHelloProvider',
@@ -90,7 +90,7 @@ class FamilyHelloProvider extends Provider<String> {
           dependencies: FamilyHelloFamily._dependencies,
           allTransitiveDependencies:
               FamilyHelloFamily._allTransitiveDependencies,
-          name: name,
+          there: there,
         );
 
   FamilyHelloProvider._internal(
@@ -100,10 +100,10 @@ class FamilyHelloProvider extends Provider<String> {
     required super.allTransitiveDependencies,
     required super.debugGetCreateSourceHash,
     required super.from,
-    required this.name,
+    required this.there,
   }) : super.internal();
 
-  final String name;
+  final String there;
 
   @override
   Override overrideWith(
@@ -118,7 +118,7 @@ class FamilyHelloProvider extends Provider<String> {
         dependencies: null,
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
-        name: name,
+        there: there,
       ),
     );
   }
@@ -130,21 +130,21 @@ class FamilyHelloProvider extends Provider<String> {
 
   @override
   bool operator ==(Object other) {
-    return other is FamilyHelloProvider && other.name == name;
+    return other is FamilyHelloProvider && other.there == there;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
-    hash = _SystemHash.combine(hash, name.hashCode);
+    hash = _SystemHash.combine(hash, there.hashCode);
 
     return _SystemHash.finish(hash);
   }
 }
 
 mixin FamilyHelloRef on ProviderRef<String> {
-  /// The parameter `name` of this provider.
-  String get name;
+  /// The parameter `there` of this provider.
+  String get there;
 }
 
 class _FamilyHelloProviderElement extends ProviderElement<String>
@@ -152,7 +152,7 @@ class _FamilyHelloProviderElement extends ProviderElement<String>
   _FamilyHelloProviderElement(super.provider);
 
   @override
-  String get name => (origin as FamilyHelloProvider).name;
+  String get there => (origin as FamilyHelloProvider).there;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
